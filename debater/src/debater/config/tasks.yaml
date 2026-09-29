@@ -1,0 +1,95 @@
+research_task:
+  description: >
+    Conduct focused and balanced research about {topic}.
+
+    Identify only the most important evidence needed for the debate.
+    Include relevant facts, statistics, examples, and arguments from both sides.
+
+    Do not invent sources or statistics.
+    If a claim cannot be verified, clearly mark it as uncertain.
+
+    The current year is {current_year}.
+
+  expected_output: >
+    A compact research brief containing:
+
+    - 4 key facts
+    - 2 strongest arguments supporting the topic
+    - 2 strongest arguments opposing the topic
+    - 2 important statistics or examples
+    - 2 major risks or weaknesses
+
+    Keep the entire research brief under 400 words.
+
+  agent: researcher
+
+
+debate_for_task:
+  description: >
+    Using the research provided, construct a concise argument in favor
+    of the assigned position on {topic}.
+
+    Use only the strongest evidence.
+    Do not repeat the research.
+    Anticipate the strongest opposing arguments and rebut them.
+
+  expected_output: >
+    A concise debate argument containing:
+
+    - Thesis
+    - 3 strongest arguments
+    - Evidence for each
+    - 2 anticipated counterarguments
+    - Concise rebuttals
+
+    Keep the response under 350 words.
+
+  agent: debater_for
+
+
+debate_against_task:
+  description: >
+    Using the research provided, construct a concise counter-position
+    on {topic}.
+
+    Focus on weaknesses in the supporting position.
+    Use only the strongest evidence.
+    Do not repeat the research.
+
+  expected_output: >
+    A concise counterargument containing:
+
+    - Counter-thesis
+    - 3 strongest counterarguments
+    - Evidence for each
+    - Direct rebuttals
+    - Key weaknesses in the opposing position
+
+    Keep the response under 350 words.
+
+  agent: debater_against
+
+
+debate_judge_task:
+  description: >
+    Act as an impartial debate judge.
+
+    Evaluate ONLY the two debate arguments provided.
+    Compare their evidence, reasoning, consistency, and rebuttals.
+
+    Do not repeat the research.
+    Do not introduce unrelated information.
+
+  expected_output: >
+    A concise and balanced assessment containing:
+
+    - Summary of both positions
+    - Strongest argument from each side
+    - Important weaknesses
+    - Evidence quality assessment
+    - Unresolved questions
+    - Final assessment
+
+    Keep the response under 300 words.
+
+  agent: debate_judge
